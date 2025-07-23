@@ -3,11 +3,14 @@ clone the repo in `/Applications/World of Warcraft/_classic_era_/Interface/AddOn
 
 
 ## what does this do?
-some useful stuff in general, like:
+- some useful stuff in general, like:
     * auto click confirmation popups
 
-an RXP troll warrior speed run
+- an RXP troll warrior speed run
     * optimized for now for 1-20
+
+- a critter targeting macro
+    * helpful for warriors that want to charge and kill the poor little guys
 
 ## random tid bits and tricks
 show your xp numbers all the time:
