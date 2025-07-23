@@ -24,6 +24,8 @@ f:SetScript("OnEvent", function(_, event, ...)
         learnWithName("Apprentice Miner")
         learnWithName("Apprentice Blacksmith")
         learnWithName("Apprentice First Aid")
+        learnWithName("Apprentice Alchemist")
+        learnWithName("Apprentice Herbalist")
     end
 end)
 
