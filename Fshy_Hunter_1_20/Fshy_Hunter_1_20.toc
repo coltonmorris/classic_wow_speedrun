@@ -1,0 +1,14 @@
+## Interface: 30400
+## Interface-Mainline: 90205
+## Interface-Wrath: 30400
+## Interface-Classic: 11403
+## Interface-BCC: 20504
+
+## Title: Fshy 1-20 Hunter
+## Notes: 1-20 Speed route for hunter
+## Author: Fshy
+## Version: 1.0
+
+## Dependencies: RXPGuides
+
+MyGuide.lua
