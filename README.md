@@ -18,14 +18,19 @@ show your xp numbers all the time:
 /console xpBarText 1
 ```
 
-warrior blink (run this after every reload or /reload to turn it off):
+warrior blink (turn this on after every reload, or put it in your addons and have it enabled everytime you login, whatever floats your boat):
 ```
-/run local f=CreateFrame("Frame")f:RegisterEvent("PLAYER_CAMPING")f:SetScript("OnEvent", function() local p=StaticPopup_Visible("CAMP")_G[p.."Button1"]:Click()end) 
+-- turn it on by putting this in a macro and then clicking it
+/run if not LogoutAuto then LogoutAuto = CreateFrame("Frame") LogoutAuto:RegisterEvent("PLAYER_CAMPING") LogoutAuto:SetScript("OnEvent", function() local p=StaticPopup_Visible("CAMP") if p then _G[p.."Button1"]:Click() end end) print("Auto logout ON") end
 
--- and the macro:
+-- turn it off by / be able to logout with this macro:
+/run if LogoutAuto then LogoutAuto:UnregisterAllEvents() LogoutAuto:SetScript("OnEvent", nil) LogoutAuto=nil print("Auto logout OFF") end
+/camp
+
+-- your charge macro:
 #showtooltip
-/cast Charge
 /startattack
+/cast Charge
 /camp
 /click StaticPopup1Button1
 ```
