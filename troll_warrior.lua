@@ -107,6 +107,10 @@ step
 .target Kilxx
 
 step
+.goto The Barrens,63.5,39.6,10
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCheck the south side of the dock if you have time for the weapon crate in the water|r
+
+step
 .goto The Barrens,63.7,38.6
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tRun to the end of the dock and wait for the boat. It waits for 1 minute at the dock and takes around 2 minutes for transit.|r
 .zone Stranglethorn Vale >>Take the boat to Booty Bay - jump from the tip of the boat to save time. it takes 3 minutes 30 seconds to run from the boat to the center of the arena

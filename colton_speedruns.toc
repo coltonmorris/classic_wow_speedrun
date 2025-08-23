@@ -9,9 +9,10 @@
 ## Author: colton
 ## Version: 1.0
 
-## OptionalDeps: RXPGuides, RXPGuides Era, RXPGuides BCC
+## Dependencies: RXPGuides
 
 troll_warrior.lua
+troll_lvl10_speedrun.lua
 utils.lua
 auto_profession.lua
 critter_target.lua
