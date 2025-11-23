@@ -1,11 +1,13 @@
 -- CONSTANTS
 ------------------------------------------------------------------------
-local MACRO_NAME  = "1 CritterTarget"
+local MACRO_NAME  = "1 CritterTarget" -- prepending "1" because macro list is alphabetical
 local MACRO_ICON  = "Ability_eyeoftheowl"
 local ROT_FUNC    = "Critter_Rotate"         -- global helper
+local DEFAULT_ZONE_ID = 0                    -- special ID for default critter list
 
 -- TODO i'm sure this list is incomplete, but it's a start
 local ZONE_CRITTERS = {
+[0] = {"Rat", "Squirrel", "Rabbit", "Deer", "Chicken"},  -- default fallback
 -- K A L I M D O R --------------------------------------------------------
 [1411] = {"School of Fish","Adder","Hare","Swine"},                                         -- Durotar
 [1412] = {"Prairie Dog"},                                                  -- Mulgore
@@ -34,7 +36,7 @@ local ZONE_CRITTERS = {
 [1417] = {"Ram", "Cat", "Cow", "Toad","Prairie Dog","Sheep"},                                          -- Arathi Highlands
 [1418] = {"Rattlesnake"},                                                  -- Badlands
 [1419] = {"Scorpid"},                                                      -- Blasted Lands
-[1420] = {"Chicken","Rat"},                                                -- Tirisfal Glades
+[1420] = {"Chicken","Rat", "Rabbit"},                                                -- Tirisfal Glades
 [1421] = {"Infected Deer", "Infected Squirrel","Deer","Rabbit"},                                                -- Silverpine Forest
 [1422] = {"Infected Deer", "Infected Squirrel","Deer","Plague Rat"},                                            -- Western Plaguelands
 [1423] = {"Plague Rat","Maggot"},                                          -- Eastern Plaguelands
@@ -115,7 +117,7 @@ local ZONE_CRITTERS = {
 ------------------------------------------------------------------------
 -- RUNTIME STATE (shared with the rotate helper)
 ------------------------------------------------------------------------
-CritterTargetData = { list = { "Critter" } }       -- default fall‑back
+CritterTargetData = { list = ZONE_CRITTERS[DEFAULT_ZONE_ID] }       -- default fall‑back
 
 ------------------------------------------------------------------------
 -- UTILITY: build macro body from current list
@@ -156,7 +158,7 @@ local function refreshForZone()
     if not mapID then
         mapID = select(8, GetInstanceInfo())
     end
-    CritterTargetData.list = ZONE_CRITTERS[mapID] or { "Critter" }
+    CritterTargetData.list = ZONE_CRITTERS[mapID] or ZONE_CRITTERS[DEFAULT_ZONE_ID]
 end
 
 ------------------------------------------------------------------------

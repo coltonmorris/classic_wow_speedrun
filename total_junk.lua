@@ -21,20 +21,19 @@ SlashCmdList.RXPJUNKVAL = function()
 end
 -- create once, right after the slash‑command block
 local junkFrame  = CreateFrame("Frame", nil, UIParent)
-junkFrame:SetPoint("BOTTOMLEFT", MainMenuBarBackpackButton, "TOPLEFT", -50, 2)
-junkFrame:SetSize(80, 14)
+junkFrame:SetPoint("BOTTOMLEFT", MainMenuBarBackpackButton, "TOPLEFT", -100, 2)
+junkFrame:SetSize(150, 14)
 
 local junkText   = junkFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
 junkText:SetAllPoints()
 
 local function UpdateJunkDisplay()
-    local value = inventoryManager.GetJunkValue()
-    if value > 0 then
-        junkText:SetText(GetCoinTextureString(value))
-        junkFrame:Show()
-    else
-        junkFrame:Hide()
-    end
+    local junkValue = inventoryManager.GetJunkValue() or 0
+    local totalGold = GetMoney() or 0
+    local totalWithJunk = totalGold + junkValue
+    local displayText = GetCoinTextureString(totalWithJunk)
+    junkText:SetText(displayText)
+    junkFrame:Show()
 end
 
 -- refresh on every bag change or when a merchant window opens

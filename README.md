@@ -20,27 +20,36 @@ clone the repo in `/Applications/World of Warcraft/_classic_era_/Interface/AddOn
     * some random community guides
 
 ## random tid bits and tricks
-show your xp numbers all the time:
-```
-/console xpBarText 1
-```
 
-warrior blink (turn this on after every reload, or put it in your addons and have it enabled everytime you login, whatever floats your boat):
-```
--- turn it on by putting this in a macro and then clicking it
-/run if not LogoutAuto then LogoutAuto = CreateFrame("Frame") LogoutAuto:RegisterEvent("PLAYER_CAMPING") LogoutAuto:SetScript("OnEvent", function() local p=StaticPopup_Visible("CAMP") if p then _G[p.."Button1"]:Click() end end) print("blink ON") end
+- unstuck character skips are determined by the red lines (logout skips) and not the white lines (death skip)
 
--- turn it off by / be able to logout with this macro:
-/run if LogoutAuto then LogoutAuto:UnregisterAllEvents() LogoutAuto:SetScript("OnEvent", nil) LogoutAuto=nil print("blink OFF") end
-/camp
+- show your xp numbers all the time:
+    ```
+    /console xpBarText 1
+    ```
 
--- your charge macro:
-#showtooltip
-/startattack
-/cast Charge
-/camp
-/click StaticPopup1Button1
-```
+- warrior blink (turn this on after every reload, or put it in your addons and have it enabled everytime you login, whatever floats your boat):
+    ```
+    -- turn it on by putting this in a macro and then clicking it
+    /run if not LogoutAuto then LogoutAuto = CreateFrame("Frame") LogoutAuto:RegisterEvent("PLAYER_CAMPING") LogoutAuto:SetScript("OnEvent", function() local p=StaticPopup_Visible("CAMP") if p then _G[p.."Button1"]:Click() end end) print("blink ON") end
+
+    -- turn it off by / be able to logout with this macro:
+    /run if LogoutAuto then LogoutAuto:UnregisterAllEvents() LogoutAuto:SetScript("OnEvent", nil) LogoutAuto=nil print("blink OFF") end
+    /camp
+
+    -- your charge macro:
+    #showtooltip
+    /startattack
+    /cast Charge
+    /camp
+    /click StaticPopup1Button1
+    ```
+
+- leatrix plus has a faster auto loot setting that speeds up looting a lot
+
+- enabling blizzard authenticator gives 4 extra bag slots (very important, especially for early money)
+
+
 
 ## random route notes:
 arena announcement is typicaly on the hour

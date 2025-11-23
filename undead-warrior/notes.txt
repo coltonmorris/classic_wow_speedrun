@@ -1,0 +1,75 @@
+    -- TODO should know how much xp we should be at when leaving with/without iyvette's letter
+    -- unstucking at 253 (after all turn ins and some kills we get 238 lvl 10)xp lvl 9 ended with 5863/6500 from quests here in town. consider doing return to magistrate (can we only talk to the magistrate once if we do this?)
+
+CHEST COORDINATES (https://www.wowhead.com/classic/object=106318/battered-chest#map):
+	- chests in undead spawn are not linked to these
+	- A. in missionary tower on the broken stair case: 51, 67.4
+		- not spawned with E,F
+		- worn hide cloak
+		- tough jerky
+	- B. top right murloc: 72.8 25.8
+	- C. scarlet warriors tower, at the very top: 31.6, 46.1
+		- rough stone
+		- refreshing spring water
+		- minor healing potion
+	- D. in agamond mills house next to ghost ladies house (never found yet): 49.2,33.6
+	- E. small pond in north west secluded and weird area 25.3, 48.7
+		- not spawned with C,F
+		- loose chain bracers
+		- shiny red apple
+		- malachite
+	- F. behind a windmill in the south part of agamand mills 49.8, 42.6
+		- not spawned with E,C
+		- tough jerky
+		- linen cloth
+		- shiny red apple
+		- minor healing potion
+
+1063 xp, no letter to yvette (480 xp). after turnins we have 6193. missing 307 xp. so should either wait till 1370xp, or do the run that gives 200, and then another 360 on the way back, and it takes 2 minutes ish for the 560xp
+
+9+1370xp -> no letter to yvette
+    9+1170xp -> run for return to magistrate
+    9+810xp -> with run back
+9+890xp -> with letter to yvette
+    9+690xp -> run for return to magistrate
+    9+330xp -> with run back
+
+5 minute xp check. starting at 407. ended at 1491. how many xp is that per minute?
+	217 per minute (but we could get the letter!)
+
+
+TODO
+	- i think that we will see more speed by doing gouls last, but this requires a routing change when we hearth back from pumpkins
+
+sell after hearthing
+dont bother with chill of death
+accepting fields of grief so we dont think we need it (nvm we do need it its just not working
+
+accept putrid task on the way out
+
+wow i was really over the xp mark this time. had decent rng for everything too. if we skipped gordo stuff we would be good (230xp + 530xp)
+
+get enough xp to not have to turn in a putrid task / accept mills overrun
+
+
+calculations are off from doom weed
+
+
+TODO START HERE
+should farm till 410xp over beofre heaarthing so putrid task
+
+TODO
+at the start before level 2, kite 2 mobs to the quest givers instead of only 1
+
+TODO
+look into timing the patrol of the road guy in and out to get his help
+https://www.wowhead.com/classic/npc=5725/deathguard-lundmark
+
+TODO
+we can probably loot less in certain areas?
+	not if they drop scrolls of stam/prot/spirit, so just the beasts if its not needed for a quest
+
+TODO 
+loot the chests, maybe get a weapon... so do rothides first?
+chest in undead starting is bad but near brill could be good
+https://classicdb.ch/?object=106318

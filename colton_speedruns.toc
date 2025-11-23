@@ -11,8 +11,13 @@
 
 ## Dependencies: RXPGuides
 
-troll_warrior.lua
-troll_lvl10_speedrun.lua
+troll_warrior_lvl20.lua
+dead_troll_warrior_lvl10.lua
+troll_warrior_lvl10.lua
 utils.lua
 auto_profession.lua
 critter_target.lua
+tauren-warrior/guide.lua
+orc-warrior/guide.lua
+undead-warrior/guide.lua
+auto_played_on_level.lua
