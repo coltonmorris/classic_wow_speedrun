@@ -78,3 +78,10 @@ and
 * make sure RXP phase is correctly set
 
 
+
+
+## 1-20 notes and thoughts
+- crate at level 6 and unstuck at the river, save hearth for razor hill after senjin village:
+- save level 6 unstuck in cave, use unstuck later to fast travel to brill, or use it in brill after we do all first quests
+- save hearth for undead killing fields / pumpkin patch
+

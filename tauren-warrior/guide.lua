@@ -326,16 +326,18 @@ step
     .accept 743 --Dangers of the Windfury
 
 step
-    .goto Mulgore,47.6,61.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna Oatwind|r
-    .vendor >> sell your shit
-    .target Jhawna Oatwind
+    .goto Mulgore,46.62,61.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
+    .vendor >> buy food
+    .skipgossip 6747,1
+    .target Innkeeper Kauth
 
 step
     .goto Mulgore,47.51,60.16
     .target Baine Bloodhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .turnin 745 --Sharing the Land
+
 step
     .goto Mulgore,46.62,61.09
     .target Innkeeper Kauth
@@ -434,6 +436,22 @@ step
 step
     .complete 758,1 --Thunderhorn Cleansing
     .goto Mulgore,44.52,45.46
+
+step
+    #sticky
+    >> Demon Scarred Cloak gives 1100xp (900 for quest, 200 for kill ghost howl)
+    >> Rite of Vision gives 480
+    >> Dwarven Digging gives 700
+    >> Dangers of Windfury gives 700
+    >> Demon Scarred Cloak gives 1100xp (900 for quest, 200 for kill ghost howl)
+    .xp 9+4420 >> 4420/6500xp WITH ghost howl: and missing both 700 xp quests
+    .xp 9+3720 >> 3720/6500xp WITH ghost howl: and missing one 700 xp quests
+    .xp 9+3020 >> 3020/6500xp WITH ghost howl: and have all quests
+    .xp 9+5320 >> 5320/6500xp WITHOUT ghost howl: and missing both 700 xp quests
+    .xp 9+4620 >> 4620/6500xp WITHOUT ghost howl: and missing one 700 xp quests
+    .xp 9+3920 >> 3920/6500xp WITHOUT ghost howl: and have all quests
+    .xp 10
+
 step
     >> Killing Ghost Howl gives 200+xp!
     .collect 4854,1 --Demon Scarred Cloak
@@ -468,6 +486,7 @@ step
     .target Skorn Whitecloud
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn Whitecloud|r
     .turnin 770,1 --The Demon Scarred Cloak
+    .isOnQuest 770
 
 step
     .goto Mulgore,47.51,60.16

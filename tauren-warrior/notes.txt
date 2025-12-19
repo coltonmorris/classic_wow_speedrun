@@ -38,6 +38,14 @@ server info:
 		remulos  * this one is great!
 	rppvp, all alone!:
 		deviate delight * this one is great!
+	pvp, SUPER laggy, 200ms lag
+		yojambe
+		arugal
+	pvp
+		incedius
+		faerlina
+		netherwind
+		benediction
 cycle through:
 	deviate delight
 	grobbulus
