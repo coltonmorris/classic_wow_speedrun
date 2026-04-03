@@ -15,6 +15,9 @@ local elapsed = 0
 
 local label
 local copyPopup
+local coordsList = {}
+local mapButton
+local listPopup
 
 local function ensureLabel()
   if label then return end
@@ -77,6 +80,127 @@ local function showCopyPopup(wx, wy)
   copyPopup.editBox:HighlightText()
 end
 
+local function getCoordsListText()
+  local parts = {}
+  for i, coord in ipairs(coordsList) do
+    table.insert(parts, string.format("%.2f, %.2f", coord.x, coord.y))
+  end
+  return table.concat(parts, "\n")
+end
+
+local function updateMapButton()
+  if not mapButton then return end
+  local count = #coordsList
+  if count > 0 then
+    mapButton:SetText(string.format("Coords (%d) - Click to Copy", count))
+  else
+    mapButton:SetText("Coords (0)")
+  end
+end
+
+local function ensureListPopup()
+  if listPopup then return end
+
+  listPopup = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
+  listPopup:SetSize(350, 200)
+  listPopup:SetPoint("CENTER")
+  listPopup:SetFrameStrata("DIALOG")
+  listPopup:SetBackdrop({
+    bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+    edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+    tile = true, tileSize = 32, edgeSize = 16,
+    insets = { left = 4, right = 4, top = 4, bottom = 4 }
+  })
+  listPopup:EnableMouse(true)
+  listPopup:SetMovable(true)
+  listPopup:RegisterForDrag("LeftButton")
+  listPopup:SetScript("OnDragStart", listPopup.StartMoving)
+  listPopup:SetScript("OnDragStop", listPopup.StopMovingOrSizing)
+  listPopup:Hide()
+
+  local title = listPopup:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  title:SetPoint("TOP", 0, -8)
+  title:SetText("Collected Coordinates (Ctrl+C to copy)")
+  listPopup.title = title
+
+  local scrollFrame = CreateFrame("ScrollFrame", nil, listPopup, "UIPanelScrollFrameTemplate")
+  scrollFrame:SetPoint("TOPLEFT", 12, -28)
+  scrollFrame:SetPoint("BOTTOMRIGHT", -30, 40)
+
+  local editBox = CreateFrame("EditBox", nil, scrollFrame)
+  editBox:SetMultiLine(true)
+  editBox:SetFontObject("ChatFontNormal")
+  editBox:SetWidth(300)
+  editBox:SetAutoFocus(false)
+  editBox:SetScript("OnEscapePressed", function(self)
+    self:ClearFocus()
+    listPopup:Hide()
+  end)
+  editBox:SetScript("OnEditFocusGained", function(self)
+    self:HighlightText()
+  end)
+  scrollFrame:SetScrollChild(editBox)
+  listPopup.editBox = editBox
+
+  local closeBtn = CreateFrame("Button", nil, listPopup, "UIPanelCloseButton")
+  closeBtn:SetPoint("TOPRIGHT", 2, 2)
+  closeBtn:SetScript("OnClick", function() listPopup:Hide() end)
+
+  local clearBtn = CreateFrame("Button", nil, listPopup, "UIPanelButtonTemplate")
+  clearBtn:SetSize(80, 22)
+  clearBtn:SetPoint("BOTTOMLEFT", 12, 10)
+  clearBtn:SetText("Clear All")
+  clearBtn:SetScript("OnClick", function()
+    coordsList = {}
+    updateMapButton()
+    listPopup.editBox:SetText("")
+  end)
+end
+
+local function showListPopup()
+  ensureListPopup()
+  local text = getCoordsListText()
+  if text == "" then
+    text = "(no coordinates collected yet)"
+  end
+  listPopup.editBox:SetText(text)
+  listPopup:Show()
+  listPopup.editBox:SetFocus()
+  listPopup.editBox:HighlightText()
+end
+
+local function addCoordToList(wx, wy)
+  table.insert(coordsList, { x = wx, y = wy })
+  updateMapButton()
+end
+
+local function clearCoordsList()
+  coordsList = {}
+  updateMapButton()
+end
+
+local function ensureMapButton()
+  if mapButton then return end
+  if not WorldMapFrame then return end
+
+  mapButton = CreateFrame("Button", nil, WorldMapFrame, "UIPanelButtonTemplate")
+  mapButton:SetSize(160, 22)
+  mapButton:SetPoint("TOPRIGHT", WorldMapFrame, "TOPRIGHT", -40, -2)
+  mapButton:SetText("Coords (0)")
+  mapButton:SetScript("OnClick", function()
+    showListPopup()
+  end)
+
+  -- Add a clear button next to it
+  local clearBtn = CreateFrame("Button", nil, WorldMapFrame, "UIPanelButtonTemplate")
+  clearBtn:SetSize(60, 22)
+  clearBtn:SetPoint("RIGHT", mapButton, "LEFT", -4, 0)
+  clearBtn:SetText("Clear")
+  clearBtn:SetScript("OnClick", function()
+    clearCoordsList()
+  end)
+end
+
 local function getPlayerWorldCoords()
   if not HBD or not HBD.GetPlayerWorldPosition then return nil, nil end
   local wx, wy, inst = HBD:GetPlayerWorldPosition()
@@ -103,7 +227,7 @@ local function setupMapClickHandler()
       return
     end
 
-    -- Ctrl+Click = copy mouse coords
+    -- Ctrl+Click = add mouse coords to list
     if IsControlKeyDown() then
       local mapID
       if WorldMapFrame.GetMapID then
@@ -120,7 +244,7 @@ local function setupMapClickHandler()
       if HBD.GetWorldCoordinatesFromZone then
         local wx, wy = HBD:GetWorldCoordinatesFromZone(x, y, mapID)
         if wx and wy then
-          showCopyPopup(wx, wy)
+          addCoordToList(wx, wy)
         end
       end
       return
@@ -208,7 +332,7 @@ local function updateLabel()
   end
 
   label:SetText(string.format(
-    "Player: %s (Shift+Click to copy)   |   Mouse: %s (Ctrl+Click to copy)",
+    "Player: %s (Shift+Click to copy)   |   Mouse: %s (Ctrl+Click to add to list)",
     playerStr, mouseStr
   ))
 end
@@ -224,6 +348,7 @@ f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(_, event, name)
   if event == "ADDON_LOADED" and name == ADDON then
     ensureLabel()
+    ensureMapButton()
     setupMapClickHandler()
   end
 end)
