@@ -1,0 +1,7 @@
+TODO
+        - make sure arrow tells us where to jump for scarlet warriors. also maybe see if there's a spot where we dont die
+        - maybe we do the zalzane quest if we have the strong sword. it gives really good xp
+                - also doing attack plans could make sense as well, we'd pick it up and after we come back from agm/ratchet we just jump off boat really early and do that bit, and it would for sure give us the next level to use the feral blade (lvl 8). but ideally we'd just run along the shore and not even have to turn it in, finishing the other quests
+                - we want to get pretty high level so that barrens / silver pine is green
+                - pumpkin quest worth?
+        - need to visit herb vendor more often for the earthroot potions, we only have visiting her once atm

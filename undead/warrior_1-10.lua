@@ -6,9 +6,8 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #version 11
-#group colton
-#defaultfor Undead
-#name colton 1-10 Tirisfal Glades
+#name colton 1-10 |T136187:0|t |T626008:0|t
+#group staying_in_tirisfal
 
 step
     #completewith next

@@ -1,0 +1,104 @@
+-5007.00, -1504.00 or 57.6 ,94.0
+
+boat disappear:
+59.8, 98.4 (-5125.40, -1661.90)
+" , 98.5           (-5124.60, -1664.00)
+", " (-5126.60, -1662.80)
+", 98.4 (-5125.30, -1661.50)
+now away from anchor
+59.7, 98.2(-5119.70, -1653.70)
+59.6, 98.1(-5114.60, -1650.40)
+59.7, 98.1 (-5117.30, -1651.30)
+back to trying anchor
+59.7, 98.2 (-5119.70, -1655.00)
+59.8, 98.3 (-5125.00, -1655.60)
+59.8 , 98.4 (-5124.60, -1661.50)
+
+
+boat comes back:
+73.8, 51.6
+
+
+doomhowl is 1 hour ahead
+bloodsail buckaneers is 3 hours ahead
+skullrock is current time
+defias pillager is 3 hours ahead
+
+TODO can hearth stone batch by setting hearthstone to org, flying to brill, hearthing and batching at brill, now we are in org and can ghetto hearth back
+
+TODO made it to the arena in 1h 3 minutes
+
+TODO
+ratchet fly to org hearth back to brill after
+or skip brill, do durotar, boat hitch to ratchet, buy sword (preset box next to pier), hearth razor hill (or maybe unstuck to here?), (will hearth be up for family crypt? if it is, fit an unstuck somewhere) fly back and jump off to start scarlet warrior quest continuing kami route
+undead warrior notes:
+        first visit to brill:
+                - fix the routing to include herbalism and alchemy training and to go talk to the vendor that may have earthroot
+                        + buy potion bottles if there are some earthroot
+                - remove gordo task?
+                - add chill of death
+                - remove pumpkins quest
+                - stay right of road when running to pumpkins to avoid high level dogs (closer to agamand mills)
+                        + TODO will need to verify this
+                - train first aid
+                - preset mining before flight
+                - org fligth path after landing
+                        - winds of desert after (should we complete or just grab? probably so we hit 8 at razor hill)
+                        - carry weight
+                        - mining / bs
+                        - break a few eggs
+                        - vanquish / encroachment
+                        - train lvl 8
+                        - peon burden pickup after castle?
+                        - hearthstone batch back after done at razor hill
+                        - do quests and then can hearth back to razor hill
+
+
+
+the boat takes 5 mins 50 seconds to go back over the same spot
+have chest spawn next to ratchet
+ratchet boat hitch in fatigue at 73.1, 49.6
+        it took 2 mins 40 secs from boat disappear to come back towards ratchet
+        starting at 76.8, 51.0 (or 77.3, 51.8 maybe this is a further swim in total though)
+
+
+after catching the boat, it will take you ~7 minutes to get to the center of the arena.
+
+
+TODO 
+look into just skipping the missionary scarlet quests?
+
+we want to spend our money from AGM as soon as possible, so we can catch up xp wise. because we are so strong we can potentially skip inefficent quests. should look into fshy's runs because i think he does that:
+        - banded buckler is OP, double the armor the worn heater shield gives. can buy it in any major city
+        - agile boots level 15: 5 agility and leather
+                * sepulcher / west barrens
+        - level 17 blessed claymore 
+                * from wallace the blind south silverpine forest, stonetalon
+                        - also sells healing potions
+        - executioners sword level 19 south silverpine, stonetalon
+        - mighty chain pants level 18 ratchet / north barrens
+        - bear buckler level 18 shield ratchet
+        - spirit cloak level 18 crossroads
+                - anitquated cloak is same but in ratchet
+                - sylvan cloak has 2 more stamina but it is level 19
+        - sword from fizzik / ratchet
+                * feral blade, usable at level 8, best until level 11 jambiya / heirloom dagger, but nearly comparable up until level 14 poniard
+                        - can skip all of brill this route assuming you have swords learned
+                * useable by an orc warrior?
+                * useable by an undead warrior. could boat hitch to ratchet after turning in senjin village quests?
+        - white shield from UC vendor
+        - heavy spiked mace
+                - must be trained in thunderbluff. what if we do a fast tauren warrior start, hearth back to razerhill after agm? can easily find heavy spiked mace because we'll have all the flight paths
+
+
+Scalemail level 17 vrang wildgore or ratchet.
+        + 1 gold 42 silver 13 copper (for full set)
+        + 85 silver 43 copper (for non full set)
+                + likely dont need pants (lvl 18 green replacement 61 silver 9 copper) 
+                + likely dont need shoes (lvl 15 green +5 agility 27 silver 71 copper)
+Chainmail level 12 crossroads.
+        + 74 silver 70 copper total
+Ringed buckler lvl 14. OP
+        + 22 silver 65 copper
+Banded buckler level 9. OP
+

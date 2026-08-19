@@ -2,7 +2,7 @@
 -- 	lua generate.lua > "/Applications/World\ of\ Warcraft/_classic_era_/Interface/AddOns/colton_speedruns/tauren_warrior/guide.lua"
 require("rxpal")
 
-local guideName = "Colton's 1-10 tauren Warrior"
+local guideName = "colton 1-10 |T132091:0|t |T626008:0|t"
 local group = "tauren warrior speeeeeeeed"
 local classHeader = [[
 << Warrior

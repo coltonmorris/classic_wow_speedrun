@@ -1,10 +1,21 @@
-RXPGuides.RegisterGuide("orc_lvl10_speedrun",[[
+-- .goto Stranglethorn Vale,30.2,64.6,10
+-- .collect 769,1          -- Chunk of Boar Meat (1)
+-- .itemcount 769,1        -- Completes when you have at least one in your bags
+-- 7098 Splintered Tusk
+-- .itemcount 4865,<2  -- Ruined Pel
+
+-- 55 xp
+-- 10 seconds for level 2
+-- 10 seconds
+
+-- 44 xp
+-- 8 seconds for level 1
+RXPGuides.RegisterGuide("colton 1-10 |T135727:0|t |T626008:0|t",[[
 << Warrior
 
 #classic
 <<Horde
-#defaultfor Orc
-#name fast_as_fuck_boi
+#name HC world record
 
 step
 #completewith Boars
@@ -102,13 +113,13 @@ step
 .hs >> Hearth to back home to mommy
 .use 6948
 
-step
+step << Troll
 .goto Durotar,42.29,68.39,12,0
 .goto Durotar,42.06,68.32
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
 .turnin 788,2 >>Turn in Cutting Teeth
 .accept 789 >>Accept Sting of the Scorpid
-.accept 2383 >>Accept Simple Parchment
+.accept 3065 >>Accept Simple Tablet
 .turnin 804,2 >>Turn in Sarkoth
 .target Gornek
 
@@ -120,9 +131,9 @@ step
 step
 .goto Durotar,40.5,68.0
 .target Kzan Thornslash
-.vendor >> Unequip **all** of your starter gear, including weapons, and vendor it, then buy a |T135421:0|t[Broad Axe] from |cRXP_FRIENDLY_Kzan Thornslash|r
-.buy 2479,1        -- Broad Axe
-.collect 2479,1    -- Step completes only after you own the Broad Axe
+.vendor >> Unequip **all** of your starter gear, including weapons, and vendor it, then buy a |T135421:0|t[Hand Axe] from |cRXP_FRIENDLY_Kzan Thornslash|r
+.buy 2134,1        -- Hand Axe
+.collect 2134,1    -- Step completes only after you own the Hand Axe
 
 step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rarc.|r
@@ -133,16 +144,19 @@ step
 .buy 2389,1 -- rusted chain boots
 .buy 2390,1 -- rusted chain bracers
 .buy 2391,1 -- rusted chain gloves
+.buy 1200,1 -- large wooden shield
 .collect 2386,1
 .collect 2387,1
 .collect 2389,1
 .collect 2390,1
 .collect 2391,1
+.collect 1200,1
 
 step
 #completewith next
-+Equip your new |T135421:0|t[Broad Axe] and full |cFF00BFFFRusted Chain|r set
-.use 2479    -- Broad Axe
++Equip your new |T135421:0|t[Hand Axe], |T134954:0|t[Large Wooden Shield] and full |cFF00BFFFRusted Chain|r set
+.use 2134    -- Hand Axe
+.use 1200    -- Large Wooden Shield
 .use 2386    -- Rusted Chain Vest
 .use 2387    -- Rusted Chain Belt
 .use 2389    -- Rusted Chain Boots
@@ -161,10 +175,10 @@ step
 .accept 792 >>Accept Vile Familiars
 .target Zureetha Fargaze
 
-step
+step << Troll
 .goto Durotar,42.89,69.44
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-.turnin 2383 >>Turn in Simple Parchment
+.turnin 3065 >>Turn in Simple Tablet
 .skipgossip
 .trainer >> Train all spells because you're rich now
 .target Frang
@@ -269,9 +283,13 @@ step
 .target Gornek
 
 step
+#completewith next
++|cRXP_WARN_Select the|r |T135419:0|t[Primitive Hatchet]
+
+step
 .goto Durotar,42.85,69.15
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-.turnin 792,4 >>Turn in Vile Familiars
+.turnin 792,3 >>Turn in Vile Familiars
 .accept 794 >>Accept Burning Blade Medallion
 .target Zureetha Fargaze
 
@@ -315,15 +333,12 @@ step
 .accept 837 >>Accept Encroachment
 .target Gar'thok
 
--- TODO we have 17s59c
--- 5s31c left
--- 
 step
 .goto Durotar,51.13,42.63
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimtak|r
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWE MUST HAVE 12s28c TO BUY EVERYTHING. buy meat up to that point
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWE MUST HAVE 12s28c TO BUY EVERYTHING. buy meat up to that point
+>>|cRXP_BUY_Buy a haunch of meat from him, maybe more if you can afford it (it costs 17s48c total for everything we want, so anything above that buy more meat|r
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn . Unequip belt and gloves and weapons |r
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tYou will need to buy a shield. Make sure you have 2silver left over for training. Any extra we should be buying more meat
 .vendor >>Vendor Trash
 .target Grimtak
 
@@ -386,6 +401,7 @@ step
 -- .buy 2402,1 -- light chain bracers
 .buy 2403,1 -- light chain gloves
 -- .buy 2398,1 -- light chain armor
+-- .buy 2376,1 -- Worn Heater Shield
 .collect 2901,1 -- mining pick
 .collect 2399,1 -- light chain belt
 -- .collect 2400,1 -- light chain leggings
@@ -393,6 +409,7 @@ step
 -- .collect 2402,1 -- light chain bracers
 .collect 2403,1 -- light chain gloves
 -- .collect 2398,1 -- light chain armor
+-- .collect 2376,1 -- Worn Heater Shield
 .vendor >> vendor trash
 
 step
@@ -405,15 +422,16 @@ step
 step
 .goto Durotar,52.0,40.5
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
->>|cRXP_BUY_Buy a|r |T135421:0|t[Large Axe] |cRXP_BUY_from him.
-.buy 2491,1
-.collect 2491,1
+>>|cRXP_BUY_Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him. Sell your|r |T135419:0|t[Primitive Hatchet]
+.buy 2490,1
+.collect 2490,1
 .target Uhgar
 
 step
 #completewith next
-+Equip your new |T135421:0|t[Broad Axe] and full |cFF00BFFFRusted Chain|r set
-.use 2491    -- Large Axe
++Equip your new |T135421:0|t[Hand Axe], |T134954:0|t[Large Wooden Shield] and full |cFF00BFFFRusted Chain|r set
+.use 2490    -- Tomahawk
+-- .use 2376    -- Large Wooden Shield
 -- .use 2386    -- Rusted Chain Vest
 .use 2387    -- Rusted Chain Belt
 -- .use 2388    -- Rusted Chain Leggings

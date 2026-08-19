@@ -1,11 +1,12 @@
 -- This file was generated using RXPAL
 -- https://github.com/jmaxor/rxpal
 
-RXPGuides.RegisterGuide("tauren warrior speeeeeeeed",[[
+RXPGuides.RegisterGuide("colton 1-10 |T132091:0|t |T626008:0|t",[[
 << Warrior
 
-#name Colton's 1-10 tauren Warrior
-#next 1-10 Durotar
+#classic
+<<Horde
+#name speeeeed WR
 
 
 step

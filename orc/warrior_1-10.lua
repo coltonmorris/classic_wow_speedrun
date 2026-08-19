@@ -1,21 +1,9 @@
--- .goto Stranglethorn Vale,30.2,64.6,10
--- .collect 769,1          -- Chunk of Boar Meat (1)
--- .itemcount 769,1        -- Completes when you have at least one in your bags
--- 7098 Splintered Tusk
--- .itemcount 4865,<2  -- Ruined Pel
-
--- 55 xp
--- 10 seconds for level 2
--- 10 seconds
-
--- 44 xp
--- 8 seconds for level 1
-RXPGuides.RegisterGuide("dead_troll_lvl10_speedrun",[[
+RXPGuides.RegisterGuide("colton 1-10 |T135726:0|t |T626008:0|t",[[
 << Warrior
 
 #classic
 <<Horde
-#name dead_fast_as_fuck_boi
+#name fast_as_fuck_boi
 
 step
 #completewith Boars
@@ -96,8 +84,7 @@ step
 
 step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBegin running into ratchet. Run towards Sarkoth spawn and jump down on the other side behind the tree. Then jump behind the next tree to escape Durotar.|r
-.xp 4 >>|cRXP_WARN_Before you leave durotar, make sure you are at level 4 XP|r
--- TODO maybe less depending on discovery XP
+.xp 4-350 >>|cRXP_WARN_Before you leave durotar, make sure you are at 1050 XP|r
 
 step
 #sticky
@@ -109,92 +96,57 @@ step
 .unitscan Slimeshell Makrura
 +Check for a |cRXP_PICK_Weapon Crate|r at the base of the waterfall. Loot it if it's up, but beware the |cRXP_ENEMY_Slimeshell Makrura|r patrolling nearby.
 
-step
-.goto The Barrens,65.2,34.7,5,0
-.goto The Barrens,65.2,34.7
-.hs >> death skip on the side of the river closest to ratchet
-.deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-.target Spirit Healer
 
 step
-.skipgossip
-.target Spirit Healer
-.goto Durotar,51.95,43.50
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
->>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
-.accept 784 >>Accept Vanquish the Betrayers
-.target Gar'thok
+.hs >> Hearth to back home to mommy
+.use 6948
 
 step
-.goto Durotar,51.13,42.63
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimtak|r
->>|cRXP_BUY_Buy a haunch of meat from him, maybe more if you can afford it (it costs 17s48c total for everything we want, so anything above that buy more meat|r
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn . Unequip belt and gloves and weapons |r
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tYou will need to buy a shield. Make sure you have 2silver left over for training. Any extra we should be buying more meat
-.vendor >>Vendor Trash
-.target Grimtak
-
-step
-#label Furl
-.goto Durotar,49.89,40.39
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
-.accept 791 >>Accept Carry Your Weight
-.target Furl Scornbrow
-
-step
-.goto Durotar,51.81,40.89
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn . Unequip weapon |r
-.train 2575 >> Train |T136248:0|t[Mining]
-.target Krunn
-
-step
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
-.target Wuark
-.vendor >> vendor trash
-.buy 2901,1 -- mining pick
-.buy 2399,1 -- light chain belt
--- .buy 2400,1 -- light chain leggings
--- .buy 2401,1 -- light chain boots
--- .buy 2402,1 -- light chain bracers
-.buy 2403,1 -- light chain gloves
--- .buy 2398,1 -- light chain armor
-.buy 2376,1 -- Worn Heater Shield
-.collect 2901,1 -- mining pick
-.collect 2399,1 -- light chain belt
--- .collect 2400,1 -- light chain leggings
--- .collect 2401,1 -- light chain boots
--- .collect 2402,1 -- light chain bracers
-.collect 2403,1 -- light chain gloves
--- .collect 2398,1 -- light chain armor
-.collect 2376,1 -- Worn Heater Shield
-.vendor >> vendor trash
-
-step
-.goto Durotar,52.0,40.5
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
->>|cRXP_BUY_Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him. Sell your|r |T135419:0|t[Primitive Hatchet]
-.buy 2490,1
-.collect 2490,1
-.target Uhgar
-
-step
-.goto Durotar,51.51,41.64
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-.link https://www.youtube.com/watch?v=Is-h2TJpL3M >>Click here to see a video on how to hearthstone batch
-.skipgossip
-.vendor >> buy some meat and make sure we have 1.86s left over for training level 4
-.hs >> hearthstone batch
-.target Innkeeper Grosk
-
-step << Troll
 .goto Durotar,42.29,68.39,12,0
 .goto Durotar,42.06,68.32
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
 .turnin 788,2 >>Turn in Cutting Teeth
 .accept 789 >>Accept Sting of the Scorpid
-.accept 3065 >>Accept Simple Tablet
+.accept 2383 >>Accept Simple Parchment
 .turnin 804,2 >>Turn in Sarkoth
 .target Gornek
+
+step
+.goto Durotar,40.5,68.0
+.target Huklah
+.vendor >> Unequip **all** of your starter gear, including weapons, and vendor it
+
+step
+.goto Durotar,40.5,68.0
+.target Kzan Thornslash
+.vendor >> Unequip **all** of your starter gear, including weapons, and vendor it, then buy a |T135421:0|t[Broad Axe] from |cRXP_FRIENDLY_Kzan Thornslash|r
+.buy 2479,1        -- Broad Axe
+.collect 2479,1    -- Step completes only after you own the Broad Axe
+
+step
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rarc.|r
+.target Rarc
+.vendor >> Buy all new armor
+.buy 2386,1 -- rusted chain vest
+.buy 2387,1 -- rusted chain belt
+.buy 2389,1 -- rusted chain boots
+.buy 2390,1 -- rusted chain bracers
+.buy 2391,1 -- rusted chain gloves
+.collect 2386,1
+.collect 2387,1
+.collect 2389,1
+.collect 2390,1
+.collect 2391,1
+
+step
+#completewith next
++Equip your new |T135421:0|t[Broad Axe] and full |cFF00BFFFRusted Chain|r set
+.use 2479    -- Broad Axe
+.use 2386    -- Rusted Chain Vest
+.use 2387    -- Rusted Chain Belt
+.use 2389    -- Rusted Chain Boots
+.use 2390    -- Rusted Chain Bracers
+.use 2391    -- Rusted Chain Gloves
 
 step
 .goto Durotar,42.73,67.23,0,0
@@ -208,10 +160,10 @@ step
 .accept 792 >>Accept Vile Familiars
 .target Zureetha Fargaze
 
-step << Troll
+step
 .goto Durotar,42.89,69.44
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-.turnin 3065 >>Turn in Simple Tablet
+.turnin 2383 >>Turn in Simple Parchment
 .skipgossip
 .trainer >> Train all spells because you're rich now
 .target Frang
@@ -296,34 +248,6 @@ step
 .mob Scorpid Worker
 
 step
-.deathskip
-.skipgossip
-.target Spirit Healer
-
-step
-.goto Durotar,44.63,68.65
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-.turnin 5441 >>Turn in Lazy Peons
-.accept 6394 >>Accept Thazz'ril's Pick
-.target Foreman Thazz'ril
-
-step
-.goto Durotar,42.85,69.15
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-.turnin 792,3 >>Turn in Vile Familiars
-.accept 794 >>Accept Burning Blade Medallion
-.target Zureetha Fargaze
-
-step
-.goto Durotar,42.29,68.39,12,0
-.goto Durotar,42.06,68.32
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
-.turnin 789,2 >>Turn in Sting of the Scorpid
-.turnin 804,2 >>Turn in Sarkoth
-.target Gornek
-
-
-step
 .goto Durotar,42.6,67.4
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
 .vendor >>Vendor Trash
@@ -334,6 +258,28 @@ step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
 .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 .target Galgar
+
+step
+.goto Durotar,42.29,68.39,12,0
+.goto Durotar,42.06,68.32
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
+.turnin 789,2 >>Turn in Sting of the Scorpid
+.turnin 804,2 >>Turn in Sarkoth
+.target Gornek
+
+step
+.goto Durotar,42.85,69.15
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
+.turnin 792,4 >>Turn in Vile Familiars
+.accept 794 >>Accept Burning Blade Medallion
+.target Zureetha Fargaze
+
+step
+.goto Durotar,44.63,68.65
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
+.turnin 5441 >>Turn in Lazy Peons
+.accept 6394 >>Accept Thazz'ril's Pick
+.target Foreman Thazz'ril
 
 step
 .goto Durotar,43.72,53.79
@@ -348,41 +294,17 @@ step
 
 step
 .goto Durotar,42.70,52.99
-.xp 6 >>Grind to level 6 in the cave. Deathskip back to Valley of Trials after
+.xp 6 >>Grind to level 6 in the cave
 
 step
-.deathskip
-.skipgossip
-.target Spirit Healer
+.goto Durotar,44.70,52.47
+.goto Durotar,53.55,44.68,30 >>Follow the arrow and log out by the large rock, then use the "Stuck Character Service" on battle.net - you will be at Razor Hill when you log back in
+>>|cRXP_WARN_Log into another character while you do this so you don't risk being disconnected|r
+>>|cRXP_WARN_Once it says "Move complete", wait another 10-15 seconds before logging in to ensure it will actually move your character|r
 
 step
-.goto Durotar,44.63,68.65
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-.turnin 6394 >>Turn in Thazz'ril's Pick
-.target Foreman Thazz'ril
-
-step
-.goto Durotar,42.85,69.15
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-.turnin 794,2 >>Turn in Burning Blade Medallion
-.accept 805 >>Accept Report to Sen'jin Village
-.target Zureetha Fargaze
-
-
-step
-#sticky
-#completewith next
-.goto Durotar,40.6,69.4,20,0
-.goto Durotar,41.3,72.7,20,0
-.goto Durotar,40.7,72.9,20,0
-.goto The Barrens,65.5,35.2,25,0
-.unitscan Slimeshell Makrura
-+death skip on the side of the river closest to ratchet
-
-step
-.deathskip >> death skip on the side of the river closest to ratchet
-.skipgossip
-.target Spirit Healer
+#completewith Furl
+>>|cRXP_WARN_To level as fast as possible and to avoid falling behind on XP and money, you should always be killing mobs while moving between objectives, even if the mobs are not needed for a quest.|r
 
 step
 .goto Durotar,51.95,43.50
@@ -392,11 +314,85 @@ step
 .accept 837 >>Accept Encroachment
 .target Gar'thok
 
+-- TODO we have 17s59c
+-- 5s31c left
+-- 
+step
+.goto Durotar,51.13,42.63
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimtak|r
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWE MUST HAVE 12s28c TO BUY EVERYTHING. buy meat up to that point
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWE MUST HAVE 12s28c TO BUY EVERYTHING. buy meat up to that point
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn . Unequip belt and gloves and weapons |r
+.vendor >>Vendor Trash
+.target Grimtak
+
 step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torka|r
 .accept 815 >>Accept Break a Few Eggs
 .goto Durotar,51.09,42.49
 .target Cook Torka
+
+step
+#label Furl
+.goto Durotar,49.89,40.39
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
+.accept 791 >>Accept Carry Your Weight
+.target Furl Scornbrow
+
+-- TODO missing zalzane kill and the other trolls quests
+-- TODO remove the train heroic strike lvl 2
+-- TODO what if i end by hearthing back to starter zone for the last 900 xp?
+    -- TODO is a peons burden really only worth 110 xp? could just skip it
+
+-- TODO start here
+-- we need to write some steps to help decide what we should buy. 
+-- - haunch of meat 1s12c
+-- - full light chain armor set in order of efficiency:
+-- 	- round buckler: 2s19c 112 armor 2 block (1.96)
+-- 	- worn heater shield: 4s2c 161 armor 3 block (2.5)
+-- 	- gloves: 1s98c 64 armor (3.09)
+-- 	- belt: 1s95c 58 armor (3.36)
+-- 	- chest: 3s91c 102 armor (3.83)
+-- 	- boots: 2s97c 70 armor (4.24)
+-- 	- legs: 3s93c 90 armor (4.37)
+-- 	- bracers: 1s97c 45 armor (4.38)
+-- - apprentice miner 10c
+-- - mining pick 81c
+-- - apprencie blacksmith 10c
+-- - tomahawk 5s40c
+-- - thunderclap 1s
+-- - parry 1s
+-- - in total, we need 17s48 copper. any extra over that we can either buy haunch of meat or the items we left off (chest > boots > legs >bracers)
+-- - AT LEVEL 8 we can (would require running into town):
+-- 	- hamstring 2s (does 5 damage)
+-- 	- heroic strike 2s (gives 10 extra damage from rank 1)
+-- 	- more haunch of meat 1s12c
+
+step
+.goto Durotar,51.81,40.89
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn . Unequip belt and gloves and weapons |r
+.train 2575 >> Train |T136248:0|t[Mining]
+.target Krunn
+
+step
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
+.target Wuark
+.vendor >> vendor trash
+.buy 2901,1 -- mining pick
+.buy 2399,1 -- light chain belt
+-- .buy 2400,1 -- light chain leggings
+-- .buy 2401,1 -- light chain boots
+-- .buy 2402,1 -- light chain bracers
+.buy 2403,1 -- light chain gloves
+-- .buy 2398,1 -- light chain armor
+.collect 2901,1 -- mining pick
+.collect 2399,1 -- light chain belt
+-- .collect 2400,1 -- light chain leggings
+-- .collect 2401,1 -- light chain boots
+-- .collect 2402,1 -- light chain bracers
+.collect 2403,1 -- light chain gloves
+-- .collect 2398,1 -- light chain armor
+.vendor >> vendor trash
 
 step
 .goto Durotar,52.05,40.73
@@ -405,6 +401,26 @@ step
 .train 2018 >> Train |T136241:0|t[Blacksmithing]
 .target Dwukk
 
+step
+.goto Durotar,52.0,40.5
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+>>|cRXP_BUY_Buy a|r |T135421:0|t[Large Axe] |cRXP_BUY_from him.
+.buy 2491,1
+.collect 2491,1
+.target Uhgar
+
+step
+#completewith next
++Equip your new |T135421:0|t[Broad Axe] and full |cFF00BFFFRusted Chain|r set
+.use 2491    -- Large Axe
+-- .use 2386    -- Rusted Chain Vest
+.use 2387    -- Rusted Chain Belt
+-- .use 2388    -- Rusted Chain Leggings
+-- .use 2389    -- Rusted Chain Boots
+-- .use 2390    -- Rusted Chain Bracers
+.use 2391    -- Rusted Chain Gloves
+
+-- TODO maybe not train thunderclap? 1s saved
 step
 .goto Durotar,54.18,42.46
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -465,18 +481,6 @@ step
 .mob Kul Tiras Sailor
 .mob Kul Tiras Marine
 
-step
-.deathskip >> death skip back to sen'jin village
-.skipgossip
-.target Spirit Healer
-
-step << Troll
-.goto Durotar,56.5,72.7,20,0
-.goto Durotar,56.29,73.41
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-.vendor >> vendor trash and repair
-.target Trayexir
-
 step << Troll
 .goto Durotar,56.5,72.7,20,0
 .goto Durotar,56.29,73.41
@@ -491,7 +495,6 @@ step
 .goto Durotar,55.95,73.93
 .accept 818 >>Accept A Solvent Spirit
 .goto Durotar,55.94,74.40
-.turnin 805 >>Turn in Report to Sen'jin Village
 .accept 808 >>Accept Minshina's Skull
 .accept 823 >>Accept Report to Orgnil
 .accept 826 >>Accept Zalazane
@@ -502,8 +505,11 @@ step
 
 step
 .goto Durotar,55.6,73.6
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
-.vendor >> Buy some meat
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r and buy as many haunch of meat as you can afford
+.vendor >> Vendor trash
+-- buy Haunch of Meat
+.buy 2287,40
+.collect 2287,40
 .target Hai'zan
 
 step
@@ -514,21 +520,6 @@ step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
 .accept 786 >>Accept Thwarting Kolkar Aggression
 .target Lar Prowltusk
-
-step
-#completewith next
-.goto Durotar,55.72,79.62,40,0
-.goto Durotar,54.23,82.26,40,0
-.goto Durotar,52.20,83.00,40,0 >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here
-.complete 818,2 --Crawler Mucus (8)
-.complete 818,1 --Intact Makrura Eye (4)
-.mob Pygmy Surf Crawler
-.mob Surf Crawler
-.mob Makrura Shellhide
-.mob Makrura Clacker
-
-step
-.goto Durotar,52.20,83.00,75 >>Reach the end of the beach
 
 step
 >>Burn the |cRXP_PICK_Attack Plan|r on the ground inside the tent
@@ -546,9 +537,28 @@ step
 .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 
 step
-.deathskip >> death skip back to sen'jin village
-.skipgossip
-.target Spirit Healer
+#completewith next
+.goto Durotar,52.20,83.00,40,0 >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here
+.goto Durotar,54.23,82.26,40,0
+.goto Durotar,55.72,79.62,40,0
+.goto Durotar,57.73,77.91,40,0
+.goto Durotar,58.54,75.89,40,0
+.complete 818,2 --Crawler Mucus (8)
+.complete 818,1 --Intact Makrura Eye (4)
+.mob Pygmy Surf Crawler
+.mob Surf Crawler
+.mob Makrura Shellhide
+.mob Makrura Clacker
+
+step
+.goto Durotar,58.40,75.60,75 >>Reach the end of the beach
+
+step
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
+.goto Durotar,55.95,74.39
+.turnin 818 >>Turn in A Solvent Spirit
+.target Master Vornal
+.isQuestComplete 818
 
 step
 #completewith TigerFur
@@ -638,9 +648,36 @@ step
 .mob Makrura Clacker
 
 step
-.deathskip >> death skip back to sen'jin village
-.skipgossip
-.target Spirit Healer
+.hs >> Hearth to back home to mommy
+.use 6948
+
+step
+.goto Durotar,42.85,69.15
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
+.turnin 794,2 >>Turn in Burning Blade Medallion
+.accept 805 >>Accept Report to Sen'jin Village
+.target Zureetha Fargaze
+
+step
+.goto Durotar,44.63,68.65
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
+.turnin 6394 >>Turn in Thazz'ril's Pick
+.target Foreman Thazz'ril
+
+step
+.goto Durotar,52.06,68.30
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ukor|r
+.accept 2161 >>Accept A Peon's Burden
+.target Ukor
+
+step
+.goto Durotar,54.09,76.31,25,0
+.goto Durotar,54.52,74.83,25,0
+.goto Durotar,54.20,73.36
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
+.turnin 786,1 >>Turn in Thwarting Kolkar Aggression
+.target Lar Prowltusk
+
 
 step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Vel'rin|r
@@ -670,17 +707,6 @@ step
 step
 #completewith next
 +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
-
-step
-.goto Durotar,54.09,76.31,25,0
-.goto Durotar,54.52,74.83,25,0
-.goto Durotar,54.20,73.36
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
-.turnin 786,1 >>Turn in Thwarting Kolkar Aggression
-.target Lar Prowltusk
-
--- TODO start here
--- hearth if we have it
 
 step
 .goto Durotar,50.21,50.78,30,0
